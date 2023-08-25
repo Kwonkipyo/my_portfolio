@@ -1,0 +1,31 @@
+@charset "utf-8";
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+} 
+.type{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    width: 70%;
+}
+#typed1{
+    color: #fff;
+    font-size: 2.5em;
+    line-height: 70px;
+    display: block;
+    text-align: center;
+}
+#typed1 em{
+    font-weight: bold;
+    font-style: normal;
+    color: #f0c6c3;
+}
+.type a{
+    margin-bottom: 25px;
+    background-color: #fff;
+}
