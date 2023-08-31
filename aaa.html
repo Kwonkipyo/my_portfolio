@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/progressbar.js"></script>
+    <style>
+        #container {
+            margin: 20px;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="container">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="132" height="123" viewBox="0 0 132 123"
+            fill="none">
+            <path fill-opacity="0" stroke-width="1" stroke="#bbb"
+                d="M5.86264 11.1142C20.5512 -6.62752 50.9994 9.07493 64.3874 19.1439C114.879 -19.0926 129.797 11.8789 130.945 32.1443C132.475 48.9683 101.746 76.881 86.1907 88.7343C71.5022 103.111 65.5349 116.902 64.3874 122C24.2233 90.6461 -12.4981 33.2914 5.86264 11.1142Z"
+                stroke="black" />
+            <path id="aaa" fill-opacity="0" stroke-width="3" stroke="#ED6A5A"
+                d="M5.86264 11.1142C20.5512 -6.62752 50.9994 9.07493 64.3874 19.1439C114.879 -19.0926 129.797 11.8789 130.945 32.1443C132.475 48.9683 101.746 76.881 86.1907 88.7343C71.5022 103.111 65.5349 116.902 64.3874 122C24.2233 90.6461 -12.4981 33.2914 5.86264 11.1142Z"
+                stroke="black" />
+        </svg>
+    </div>
+    <script>
+        var bar = new ProgressBar.Path('#aaa', {
+            easing: 'easeInOut',
+            duration: 1400
+        });
+
+        bar.set(0);
+        bar.animate(1.0);  // Number from 0.0 to 1.0
+    </script>
+
+</body>
+
+</html>
