@@ -21,6 +21,7 @@ body {
   padding: 10px 0;
   z-index: 99;
   top: 0;
+  display: none;
 }
 .header-wrap {
   /* 반응형 좌우에 약간의 여백이 존재함 */
@@ -195,4 +196,159 @@ body {
 .profile-desc .profile-skill .progress-area .progressbar-text {
   left: 94% !important;
   top: 39% !important;
+}
+/* 퍼블리싱 */
+.content .work-wrap {
+  width: 100%;
+}
+.content .web-swiper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+}
+.content .web-swiper .work-content {
+  display: flex;
+  margin-bottom: 60px;
+}
+.content .web-swiper .work-content .work-img {
+  position: relative;
+  flex-basis: 45%;
+  margin-left: 80px;
+}
+.content .web-swiper .work-content .work-img img {
+  width: 100%;
+}
+/* pc 이미지 */
+.content .web-swiper .work-content .work-img .pc {
+  width: 85%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  overflow: hidden;
+}
+.content .web-swiper .work-content .work-img .pc::after {
+  content: "";
+  position: absolute;
+  width: 93%;
+  height: 62%;
+  background: url("../images/preview.jpg") center top / cover;
+  left: 14px;
+  top: 13px;
+}
+.content .web-swiper .work-content .work-img .tablet {
+  width: 35%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  
+}
+.content .web-swiper .work-content .work-img .tablet::after{
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 93%;
+  background: url("../images/preview.jpg") center top / cover;
+  left: 11px;
+  top: 8px;
+}
+.content .web-swiper .work-content .work-img .mobile {
+  width: 23%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.content .web-swiper .work-content .work-img .mobile:after{
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 93%;
+  background: url("../images/preview.jpg") center top / cover;
+  left: 7px;
+  top: 8px;
+}
+/* work-desc */
+.content .web-swiper .work-content .work-desc {
+  flex-basis: 37%;
+  padding: 10px 80px 20px 80px;
+
+}
+.content .web-swiper .work-content .work-desc p {
+  font-size: 16px;
+  padding: 5px;
+}
+.content .web-swiper .work-content .work-desc h3 {
+  font-size: 28px;
+  font-weight: bold;
+  padding-top: 30px;
+}
+.content .web-swiper .work-content .work-desc p:nth-child(2) {
+  font-size: 1.2em;
+}
+.content .web-swiper .work-content .work-desc span {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.content .web-swiper .work-content .work-desc span:nth-child(1) {
+  background-color: #f8b5b5;
+}
+.content .web-swiper .work-content .work-desc span:nth-child(2) {
+  background-color: #ffecb9;
+  margin: 0 10px;
+}
+.content .web-swiper .work-content .work-desc span:nth-child(3) {
+  background-color: #080808;
+}
+.content .web-swiper .work-content .work-img > div:hover::after{
+  transition: 5s;
+  background-position: center bottom;
+}
+.content .web-swiper .work-content .work-desc .btn-wrap ul{
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+.content .web-swiper .work-content .work-desc .btn-wrap ul li{
+  padding: 2% 6%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: #fff;
+  transition: 0.5s;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+.content .web-swiper .work-content .work-desc .btn-wrap ul li:nth-child(2){
+  margin: 0 4%;
+}
+.content .web-swiper .work-content .work-desc .btn-wrap ul li:hover{
+  box-shadow: -75px 0 0 0 #fac8c8 inset, 75px 0 0 0 #fac8c8 inset;
+}
+.content .web-swiper .work-content .work-desc .btn-wrap ul li:hover a{
+  color: #fff;
+}
+.content .web-swiper .work-content .work-desc .btn-wrap ul li a{
+  transition: 0.3, 0.1;
+}
+.content .swiper .work-content:last-child{
+  margin-bottom: 0;
+}
+.content .swiper .work-content:nth-child(2n+1) .work-img{
+  order: 2;
+  margin-left: 0;
+  margin-right: 80px;
+}
+.content .swiper .work-content:nth-child(2n+1) .work-desc{
+  order: 1;
+  margin: 80px 10px;
 }

@@ -3,6 +3,14 @@ $("document").ready(function () {
     stringsElement: "#typed",
     typeSpeed: 100,
   });
+  // web-swiper
+  const webSwiper = new Swiper(".swiper.web-swiper", {
+    autoplay: {
+      delay: 5000,
+    },
+    slidesPerView: 1,
+    loop: true,
+  });
   // 없는것을 임의로 만들어둠 false 일때 실행하지 않음
   // 이걸 true로 만들어줘서 왔다갔다 할때 실행되지 않도록 하는 원리...
   // 프로그래스바가 중첩으로 실행되는것을 막아줌
@@ -40,12 +48,15 @@ $("document").ready(function () {
     responsiveWidth: 1200,
     // progressbar.js@1.0.0 version is used
     // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
-    // 첫번째 섹션으로 이동할때,
+
     // afterLoad: 각섹션에 로딩한후에 실행될 함수
     // origin은 어디서부터 이벤트가 발생했는지, destination은 어디로 이동하는지를 나타냄
     afterLoad: function (origin, destination) {
       console.log(destination);
-
+      // 첫번째 섹션으로 이동할때,
+      if (destination == 1) {
+        $("#fp-nav ul li .fp-tooltip").eq(0).addClass("on");
+      }
       // 툴팁
       if (destination == 2 && isChk == false) {
         isChk = true;
@@ -110,6 +121,31 @@ $("document").ready(function () {
         });
         bar6.animate(0.8);
       }
+    },
+    // onLeave:사용자가 페이지에서 다른 섹션으로 이동할때 발생하는 이벤트
+    onLeave: function (origin, destination) {
+      // header 보이기 숨기기
+      if (destination > 1) {
+        $(".header").fadeIn();
+      } else {
+        $(".header").fadeOut();
+      }
+      // 풀페이지 툴팁에 대한 내용
+      $("#fp-nav ul li .fp-tooltip")
+        .removeClass("on")
+        // eq(0)
+        //  anchors: [
+        //   "home",
+        //   "profile",
+        //   "publishing",
+        //   "design",
+        //   "ux",
+        //   "contact",
+        //   "footer",
+        // ],
+        .eq(destination - 1)
+        .addClass("on");
+      console.log(destination - 1);
     },
   });
 });
